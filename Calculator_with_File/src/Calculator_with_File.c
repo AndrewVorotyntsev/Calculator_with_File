@@ -11,10 +11,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <conio.h>
-#include <string.h>
 
 
+//определяем функция факториал
 float factorial(float n)
 {
     if (n == 0 || n == 1) return 1;
@@ -26,11 +25,13 @@ int main(void)
 {
     setvbuf(stdout, NULL, _IONBF, 0);
     setvbuf(stderr, NULL, _IONBF, 0);
+    //открываем файлы для чтения и записи
     FILE *write , *result ;
     write = fopen("Data.txt", "r");
     result = fopen("Result.txt" , "w");
     float a , b ;
     int z , t , i ,n ;
+    //Считываем данные из файла ,производим вычисления
     fscanf(write ,"%i" , &z);
     if (z==0){
         fscanf(write ,"%f" , &a);
