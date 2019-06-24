@@ -34,9 +34,9 @@ int main(void)
     //Считываем данные из файла ,производим вычисления
     fscanf(write ,"%i" , &z);
     if (z==0){
-        fscanf(write ,"%f" , &a);
+        fscanf(write ,"%f" , &a);//Считываются переменные
         fscanf(write ,"%f" , &b);
-        fscanf(write ,"%i" , &t);
+        fscanf(write ,"%i" , &t);//считывается номер операции
         switch (t)
             {
                 case 0:
@@ -60,10 +60,11 @@ int main(void)
         }
     }
     if(z==1){
-        fscanf(write,"%i", &i ); // Вводим размерность векторов
+        fscanf(write,"%i", &i );
         float *A , *B ,e ,d;
-        if (A != NULL) A = malloc(i*sizeof(float));
-        if (B != NULL) B = malloc(i*sizeof(float));
+        A = malloc(i*sizeof(float));
+        B = malloc(i*sizeof(float));
+        //поочередно сканируются координаты
         for (int k=0;k<i;k++)
             fscanf(write,"%f", &A[k]);
         for (int l=0;l<i;l++)
